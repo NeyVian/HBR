@@ -6,7 +6,7 @@
     Required Dependencies: None
     Optional Dependencies: None
 			
-	Version 1.0: 16.12.2023
+    Version 1.0: 16.12.2023
 
     Needs Administrator privileges
 
@@ -27,9 +27,9 @@ function Invoke-DropNet()
 { 
 <#
     .SYNOPSIS
-	    Terminates network connections (TCP) automatically.
+	Terminates network connections (TCP) automatically.
 
-	    Author: Eviatar Gerzi (@g3rzi)
+	Author: Eviatar Gerzi (@g3rzi)
 		License: Free
 		Required Dependencies: None
 		Optional Dependencies: None
@@ -369,10 +369,11 @@ function Set-Interface()
 
     $recoButton = New-Object System.Windows.Forms.Button
     $recoButton.Location = New-Object System.Drawing.Point(0,0)
-    $recoButton.Size = New-Object System.Drawing.Size(180,40)
+    $recoButton.Size = New-Object System.Drawing.Size(177,40)
     $recoButton.BackColor = 'LightGray'
     $recoButton.Text = 'RECONNECT'
     $recoButton.Cursor = [System.Windows.Forms.Cursors]::Hand
+    $recoButton.FlatStyle = [System.Windows.Forms.Flatstyle]::Flat
     $recoButton.Add_Click({ Invoke-DropNet -RemotePort $HS_TcpPort -Close })
     $form.Controls.Add($recoButton)
 
@@ -382,6 +383,7 @@ function Set-Interface()
     $closeButton.BackColor = 'LightGray'
     $closeButton.Text = 'X'
     $closeButton.Cursor = [System.Windows.Forms.Cursors]::Hand
+    $closeButton.FlatStyle = [System.Windows.Forms.Flatstyle]::Flat
     $closeButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
     $form.AcceptButton = $closeButton
     $form.Controls.Add($closeButton)
